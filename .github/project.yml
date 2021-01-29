@@ -1,5 +1,5 @@
-name: Quarkiverse Extension
+name: Quarkiverse Hibernate types
 release:
   current-version: 0
-  next-version: 0.0.1-SNAPSHOT
+  next-version: 0.1.0-SNAPSHOT
 
