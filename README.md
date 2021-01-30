@@ -2,7 +2,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=master)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernate/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=a:quarkus-hibernate-types-parent)
+[![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernatetypes/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=g:io.quarkiverse.hibernatetypes%20AND%20a:quarkus-hibernate-types-parent)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
