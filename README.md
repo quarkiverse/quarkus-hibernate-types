@@ -12,7 +12,7 @@ To use the extension, add the dependency to the target project:
 
 ```xml
 <dependency>
-  <groupId>io.quarkiverse.hibernate</groupId>
+  <groupId>io.quarkiverse.hibernatetypes</groupId>
   <artifactId>quarkus-hibernate-types</artifactId>
   <version>{latest-maven-release}</version>
 </dependency>
