@@ -10,6 +10,7 @@ import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 public class MySQLResource implements QuarkusTestResourceLifecycleManager {
 
     MySQLContainer<?> db = new MySQLContainer<>("mysql:5.7.22")
+            .withUrlParam("useSSL", "false")
             .withDatabaseName("hibernate_orm_test")
             .withUsername("hibernate_orm_test")
             .withPassword("hibernate_orm_test");
