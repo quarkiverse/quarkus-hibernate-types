@@ -15,7 +15,9 @@
 
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
+        <!--suppress UnresolvedMavenProperty -->
         <quarkus.build.skip>${skipTests}</quarkus.build.skip>
+        <!--suppress UnresolvedMavenProperty -->
         <native.surefire.skip>${skipTests}</native.surefire.skip>
     </properties>
 

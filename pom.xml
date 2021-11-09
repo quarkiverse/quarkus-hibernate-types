@@ -14,16 +14,14 @@
     <packaging>pom</packaging>
 
     <properties>
+        <quarkus.version>2.2.3.Final</quarkus.version>
+        <testcontainers.version>1.15.3</testcontainers.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <maven.compiler.parameters>true</maven.compiler.parameters>
-        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-        <quarkus.version>1.12.0.Final</quarkus.version>
-        <testcontainers.version>1.15.2</testcontainers.version>
-        <jandex-plugin.version>1.0.8</jandex-plugin.version>
-        <resource-plugin.version>3.2.0</resource-plugin.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
     </properties>
 
@@ -65,43 +63,25 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                    <version>${quarkus.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-maven-plugin</artifactId>
+                    <version>${quarkus.version}</version>
+                </plugin>
+                <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${version.compiler.plugin}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${resource-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire-plugin.version}</version>
-                    <configuration>
-                        <systemPropertyVariables>
-                            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                        </systemPropertyVariables>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.jboss.jandex</groupId>
-                    <artifactId>jandex-maven-plugin</artifactId>
-                    <version>${jandex-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>make-index</id>
-                            <goals>
-                                <goal>jandex</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <version>${compiler-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
     <profiles>
         <profile>
-            <id>perform-release</id>
+            <id>it</id>
             <activation>
                 <property>
                     <name>performRelease</name>
@@ -114,33 +94,4 @@
         </profile>
     </profiles>
 
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>andrejpetras</id>
-            <name>Andrej Petras</name>
-            <email>andrej@lorislab.org</email>
-            <organization>Lorislab</organization>
-            <organizationUrl>https://www.lorislab.org/</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <url>https://github.com/quarkiverse/quarkus-hibernate-types</url>
-        <connection>scm:git:git@github.com:quarkiverse/quarkus-hibernate-types.git</connection>
-        <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-hibernate-types.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/quarkiverse/quarkus-hibernate-types/issues/</url>
-    </issueManagement>
 </project>
