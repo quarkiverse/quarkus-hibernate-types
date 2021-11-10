@@ -1,10 +1,10 @@
 package io.quarkiverse.hibernate.types.json.impl;
 
-import java.io.Serializable;
-
 import org.hibernate.type.descriptor.WrapperOptions;
 import org.hibernate.type.descriptor.java.AbstractTypeDescriptor;
 import org.hibernate.type.descriptor.java.MutableMutabilityPlan;
+
+import java.io.Serializable;
 
 public class JsonObjectTypeDescriptor<T> extends AbstractTypeDescriptor<T> {
 
@@ -48,7 +48,7 @@ public class JsonObjectTypeDescriptor<T> extends AbstractTypeDescriptor<T> {
         return (T) JsonMapperInstance.readObject(string);
     }
 
-    @SuppressWarnings({ "unchecked" })
+    @SuppressWarnings({"unchecked"})
     @Override
     public <X> X unwrap(T value, Class<X> type, WrapperOptions options) {
         if (value == null) {

@@ -1,8 +1,8 @@
 package io.quarkiverse.hibernate.types.json.impl;
 
-import java.lang.reflect.Type;
-
 import io.quarkiverse.hibernate.types.json.JsonMapper;
+
+import java.lang.reflect.Type;
 
 /**
  * Wraps a JSON mapper {@link JsonMapper} so that you can supply your own {@link JsonMapper} reference.

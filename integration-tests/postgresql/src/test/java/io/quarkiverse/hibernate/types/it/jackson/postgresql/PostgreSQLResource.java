@@ -1,11 +1,10 @@
 package io.quarkiverse.hibernate.types.it.jackson.postgresql;
 
-import java.util.Collections;
-import java.util.Map;
-
+import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import org.testcontainers.containers.PostgreSQLContainer;
 
-import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
+import java.util.Collections;
+import java.util.Map;
 
 public class PostgreSQLResource implements QuarkusTestResourceLifecycleManager {
 

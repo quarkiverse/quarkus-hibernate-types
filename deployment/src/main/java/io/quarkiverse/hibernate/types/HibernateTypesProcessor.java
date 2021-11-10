@@ -1,7 +1,5 @@
 package io.quarkiverse.hibernate.types;
 
-import static io.quarkus.deployment.annotations.ExecutionTime.RUNTIME_INIT;
-
 import io.quarkiverse.hibernate.types.jackson.JacksonMapperProducer;
 import io.quarkiverse.hibernate.types.json.impl.JsonMapperRecorder;
 import io.quarkus.arc.deployment.AdditionalBeanBuildItem;
@@ -11,6 +9,8 @@ import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.annotations.Record;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
+
+import static io.quarkus.deployment.annotations.ExecutionTime.RUNTIME_INIT;
 
 public class HibernateTypesProcessor {
 
