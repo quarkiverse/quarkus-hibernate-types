@@ -1,6 +1,8 @@
 package io.quarkiverse.hibernate.types;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
