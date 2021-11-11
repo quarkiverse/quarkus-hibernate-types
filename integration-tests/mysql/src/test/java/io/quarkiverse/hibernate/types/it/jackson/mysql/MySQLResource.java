@@ -1,11 +1,10 @@
 package io.quarkiverse.hibernate.types.it.jackson.mysql;
 
-import java.util.Collections;
-import java.util.Map;
-
+import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import org.testcontainers.containers.MySQLContainer;
 
-import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
+import java.util.Collections;
+import java.util.Map;
 
 public class MySQLResource implements QuarkusTestResourceLifecycleManager {
 

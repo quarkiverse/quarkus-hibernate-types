@@ -1,12 +1,11 @@
 package io.quarkiverse.hibernate.types.json;
 
-import java.util.Properties;
-
+import io.quarkiverse.hibernate.types.json.impl.JsonStringSqlTypeDescriptor;
+import io.quarkiverse.hibernate.types.json.impl.JsonTypeDescriptor;
 import org.hibernate.type.AbstractSingleColumnStandardBasicType;
 import org.hibernate.usertype.DynamicParameterizedType;
 
-import io.quarkiverse.hibernate.types.json.impl.JsonStringSqlTypeDescriptor;
-import io.quarkiverse.hibernate.types.json.impl.JsonTypeDescriptor;
+import java.util.Properties;
 
 /**
  * Maps any given Java object on a JSON column type that is managed via

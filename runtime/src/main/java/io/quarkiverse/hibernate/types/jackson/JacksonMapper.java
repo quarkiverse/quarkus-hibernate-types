@@ -1,13 +1,12 @@
 package io.quarkiverse.hibernate.types.jackson;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.quarkiverse.hibernate.types.json.JsonMapper;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
 
 /**
  * Wraps a JSON mapper {@link ObjectMapper} so that you can supply your own {@link ObjectMapper} reference.
