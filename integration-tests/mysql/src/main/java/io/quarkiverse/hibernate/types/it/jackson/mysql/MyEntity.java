@@ -1,14 +1,15 @@
 package io.quarkiverse.hibernate.types.it.jackson.mysql;
 
-import io.quarkiverse.hibernate.types.json.JsonType;
-import io.quarkiverse.hibernate.types.json.JsonTypes;
-import io.quarkus.runtime.annotations.RegisterForReflection;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
+import io.quarkiverse.hibernate.types.json.JsonType;
+import io.quarkiverse.hibernate.types.json.JsonTypes;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @TypeDef(name = JsonTypes.JSON, typeClass = JsonType.class)
 @Entity

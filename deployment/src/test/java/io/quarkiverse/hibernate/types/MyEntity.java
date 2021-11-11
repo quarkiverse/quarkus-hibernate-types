@@ -1,13 +1,12 @@
 package io.quarkiverse.hibernate.types;
 
-import io.quarkiverse.hibernate.types.json.JsonType;
-import io.quarkiverse.hibernate.types.json.JsonTypes;
+import javax.persistence.*;
+
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import io.quarkiverse.hibernate.types.json.JsonType;
+import io.quarkiverse.hibernate.types.json.JsonTypes;
 
 @TypeDef(name = JsonTypes.JSON, typeClass = JsonType.class)
 @Entity

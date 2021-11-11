@@ -1,17 +1,18 @@
 package io.quarkiverse.hibernate.types;
 
-import io.quarkus.arc.Arc;
-import io.quarkus.test.QuarkusUnitTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import io.quarkus.arc.Arc;
+import io.quarkus.test.QuarkusUnitTest;
 
 public class JacksonMapperTestCase {
 

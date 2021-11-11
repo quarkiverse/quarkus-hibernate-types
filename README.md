@@ -1,5 +1,4 @@
 # Quarkus Hibernate types
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=master)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -18,9 +17,7 @@ To use the extension, add the dependency to the target project:
   <version>{latest-maven-release}</version>
 </dependency>
 ```
-
 ## Simple usage
-
 ```java
 import io.quarkiverse.hibernate.types.json.JsonBinaryType;
 import io.quarkiverse.hibernate.types.json.JsonType;
@@ -40,7 +37,6 @@ public class MyEntity {
     private MyParam param;
 }
 ```
-
 ```java
 public class MyParam {
 
@@ -68,5 +64,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
-Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

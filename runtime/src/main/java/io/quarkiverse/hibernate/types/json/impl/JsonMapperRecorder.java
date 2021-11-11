@@ -1,10 +1,10 @@
 package io.quarkiverse.hibernate.types.json.impl;
 
+import javax.enterprise.inject.Default;
+
 import io.quarkiverse.hibernate.types.json.JsonMapper;
 import io.quarkus.arc.runtime.BeanContainer;
 import io.quarkus.runtime.annotations.Recorder;
-
-import javax.enterprise.inject.Default;
 
 @Recorder
 public class JsonMapperRecorder {
