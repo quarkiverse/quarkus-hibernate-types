@@ -1,14 +1,14 @@
 package io.quarkiverse.hibernate.types.json.impl;
 
+import java.lang.reflect.Type;
+import java.util.Properties;
+
 import org.hibernate.annotations.common.reflection.XProperty;
 import org.hibernate.annotations.common.reflection.java.JavaXMember;
 import org.hibernate.type.descriptor.WrapperOptions;
 import org.hibernate.type.descriptor.java.AbstractTypeDescriptor;
 import org.hibernate.type.descriptor.java.MutableMutabilityPlan;
 import org.hibernate.usertype.DynamicParameterizedType;
-
-import java.lang.reflect.Type;
-import java.util.Properties;
 
 public class JsonTypeDescriptor extends AbstractTypeDescriptor<Object> implements DynamicParameterizedType {
 
@@ -58,7 +58,7 @@ public class JsonTypeDescriptor extends AbstractTypeDescriptor<Object> implement
         return JsonMapperInstance.fromJson(string, type);
     }
 
-    @SuppressWarnings({"unchecked"})
+    @SuppressWarnings({ "unchecked" })
     @Override
     public <X> X unwrap(Object value, Class<X> type, WrapperOptions options) {
         if (value == null) {

@@ -1,11 +1,12 @@
 package io.quarkiverse.hibernate.types.json;
 
-import io.quarkiverse.hibernate.types.json.impl.JsonTypeDescriptor;
+import java.sql.Blob;
+import java.util.Properties;
+
 import org.hibernate.type.AbstractSingleColumnStandardBasicType;
 import org.hibernate.usertype.DynamicParameterizedType;
 
-import java.sql.Blob;
-import java.util.Properties;
+import io.quarkiverse.hibernate.types.json.impl.JsonTypeDescriptor;
 
 /**
  * Maps any given Java object on a JSON column type that is managed via {@link java.sql.PreparedStatement#setBlob(int, Blob)} at

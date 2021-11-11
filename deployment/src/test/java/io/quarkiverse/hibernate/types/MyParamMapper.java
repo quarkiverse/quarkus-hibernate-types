@@ -1,8 +1,8 @@
 package io.quarkiverse.hibernate.types;
 
-import io.quarkiverse.hibernate.types.json.JsonMapper;
-
 import java.lang.reflect.Type;
+
+import io.quarkiverse.hibernate.types.json.JsonMapper;
 
 public class MyParamMapper implements JsonMapper {
 
