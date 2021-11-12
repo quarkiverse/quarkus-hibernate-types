@@ -19,9 +19,9 @@ public class CamelCaseToSnakeCaseNamingStrategy extends PhysicalNamingStrategySt
 
     public static final CamelCaseToSnakeCaseNamingStrategy INSTANCE = new CamelCaseToSnakeCaseNamingStrategy();
 
-    public static final Pattern CAMEL_CASE_REGEX = Pattern.compile("([a-z]+)([A-Z]+)");
+    private static final Pattern CAMEL_CASE_REGEX = Pattern.compile("([a-z]+)([A-Z]+)");
 
-    public static final String SNAKE_CASE_PATTERN = "$1\\_$2";
+    private static final String SNAKE_CASE_PATTERN = "$1\\_$2";
 
     public CamelCaseToSnakeCaseNamingStrategy() {
     }
