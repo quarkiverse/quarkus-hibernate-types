@@ -1,5 +1,5 @@
 name: quarkus-hibernate-types
-title: Quarkiverse Hibernate types
+title: Quarkus Hibernate types
 version: dev
 nav:
   - modules/ROOT/nav.adoc
