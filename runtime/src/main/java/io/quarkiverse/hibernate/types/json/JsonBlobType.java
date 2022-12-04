@@ -1,14 +1,15 @@
 package io.quarkiverse.hibernate.types.json;
 
+import java.lang.reflect.Type;
+import java.sql.Blob;
+import java.util.Properties;
+
+import org.hibernate.usertype.DynamicParameterizedType;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vladmihalcea.hibernate.type.AbstractHibernateType;
 import com.vladmihalcea.hibernate.type.json.internal.*;
 import com.vladmihalcea.hibernate.type.util.*;
-import org.hibernate.usertype.DynamicParameterizedType;
-
-import java.lang.reflect.Type;
-import java.sql.Blob;
-import java.util.Properties;
 
 /**
  * <p>
