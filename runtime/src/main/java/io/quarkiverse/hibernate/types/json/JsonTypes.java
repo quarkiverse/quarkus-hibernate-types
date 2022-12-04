@@ -1,9 +1,10 @@
 package io.quarkiverse.hibernate.types.json;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import java.sql.Blob;
 
 import javax.persistence.Column;
-import java.sql.Blob;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * JSON hibernate types.

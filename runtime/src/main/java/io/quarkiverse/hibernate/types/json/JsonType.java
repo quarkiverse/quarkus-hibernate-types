@@ -1,15 +1,17 @@
 package io.quarkiverse.hibernate.types.json;
 
+import java.lang.reflect.Type;
+import java.util.Properties;
+
+import javax.persistence.Column;
+
+import org.hibernate.type.descriptor.sql.SqlTypeDescriptor;
+import org.hibernate.usertype.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vladmihalcea.hibernate.type.AbstractHibernateType;
 import com.vladmihalcea.hibernate.type.json.internal.*;
 import com.vladmihalcea.hibernate.type.util.*;
-import org.hibernate.type.descriptor.sql.SqlTypeDescriptor;
-import org.hibernate.usertype.*;
-
-import javax.persistence.Column;
-import java.lang.reflect.Type;
-import java.util.Properties;
 
 /**
  * <p>
