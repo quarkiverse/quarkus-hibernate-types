@@ -22,8 +22,9 @@
     </properties>
 
     <modules>
-        <module>postgresql</module>
+        <module>multiple</module>
         <module>mysql</module>
+        <module>postgresql</module>
     </modules>
 
     <build>
