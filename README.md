@@ -1,5 +1,7 @@
 # Quarkus Hibernate types
 
+https://github.com/quarkiverse/quarkus-hibernate-types/issues/102 - looking for new maintainers
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=main)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
