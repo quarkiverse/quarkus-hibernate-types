@@ -3,10 +3,7 @@
 https://github.com/quarkiverse/quarkus-hibernate-types/issues/102 - looking for new maintainers
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=main)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
-[![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernatetypes/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=g:io.quarkiverse.hibernatetypes%20AND%20a:quarkus-hibernate-types-parent)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Usage
@@ -60,9 +57,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://www.lorislab.org"><img src="https://avatars2.githubusercontent.com/u/828045?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrej Petras</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkiverse-hibernate-types/commits?author=andrejpetras" title="Code">💻</a> <a href="#maintenance-andrejpetras" title="Maintenance">🚧</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://www.lorislab.org"><img src="https://avatars2.githubusercontent.com/u/828045?v=4?s=100" width="100px;" alt="Andrej Petras"/><br /><sub><b>Andrej Petras</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=andrejpetras" title="Code">💻</a> <a href="#maintenance-andrejpetras" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="https://conceptive.io"><img src="https://avatars.githubusercontent.com/u/14055002?v=4?s=100" width="100px;" alt="Werner Glanzer"/><br /><sub><b>Werner Glanzer</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=wglanzer" title="Code">💻</a> <a href="#maintenance-wglanzer" title="Maintenance">🚧</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
