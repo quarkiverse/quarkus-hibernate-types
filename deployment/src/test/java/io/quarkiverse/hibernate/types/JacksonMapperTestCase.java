@@ -36,12 +36,17 @@ public class JacksonMapperTestCase {
             assertNotNull(entity.getParam());
             assertEquals("1", entity.getParam().getId());
             assertEquals("test1", entity.getParam().getName());
+            assertEquals("1", entity.getVertxObject().getString("id"));
+            assertEquals("test1", entity.getVertxObject().getString("name"));
+
             entity = em.find(MyEntity.class, "2");
             assertNotNull(entity);
             assertEquals("2", entity.getId());
             assertNotNull(entity.getParam());
             assertEquals("2", entity.getParam().getId());
             assertEquals("test2", entity.getParam().getName());
+            assertEquals("2", entity.getVertxObject().getString("id"));
+            assertEquals("test2", entity.getVertxObject().getString("name"));
         } finally {
             Arc.container().requestContext().terminate();
         }

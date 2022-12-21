@@ -32,6 +32,14 @@
       <version>2.21.0</version>
     </dependency>
 
+    <!-- Custom VertX Object Mapper -->
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-core</artifactId>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
+
     <!-- JUnit -->
     <dependency>
       <groupId>io.quarkus</groupId>
