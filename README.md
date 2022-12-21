@@ -1,6 +1,8 @@
 # Quarkus Hibernate types
 
-https://github.com/quarkiverse/quarkus-hibernate-types/issues/102 - looking for new maintainers
+[![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=main)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
+[![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernatetypes/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=g:io.quarkiverse.hibernatetypes%20AND%20a:quarkus-hibernate-types-parent)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
