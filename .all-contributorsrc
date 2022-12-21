@@ -14,12 +14,23 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "wglanzer",
+      "name": "Werner Glanzer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14055002?v=4",
+      "profile": "https://conceptive.io",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "quarkiverse-hibernate-types",
+  "projectName": "quarkus-hibernate-types",
   "projectOwner": "quarkiverse",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
