@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import io.vertx.core.json.JsonObject;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
@@ -22,6 +23,10 @@ public class MyEntity {
     @Column(name = "PARAM", columnDefinition = "varchar(255)")
     private MyParam param;
 
+    @Type(type = JsonTypes.JSON)
+    @Column(name = "PARAM_VERTX", columnDefinition = "varchar(255)")
+    private JsonObject vertxObject;
+
     public String getId() {
         return id;
     }
@@ -37,4 +42,9 @@ public class MyEntity {
     public void setParam(MyParam param) {
         this.param = param;
     }
+
+    public JsonObject getVertxObject() {
+        return vertxObject;
+    }
+
 }
