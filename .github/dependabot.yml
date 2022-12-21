@@ -7,6 +7,8 @@ version: 2
 updates:
   - package-ecosystem: "maven"
     directory: "/"
+    reviewers:
+      - "wglanzer"
     schedule:
       interval: "daily"
     ignore:
