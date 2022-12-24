@@ -1,18 +1,19 @@
 package io.quarkiverse.hibernate.types.it;
 
-import io.quarkiverse.hibernate.types.it.entities.MyEntity;
-import io.quarkus.test.common.QuarkusTestResource;
-import io.quarkus.test.junit.QuarkusTest;
-import io.restassured.RestAssured;
-import io.restassured.parsing.Parser;
-import io.restassured.response.Response;
+import java.util.stream.Stream;
+
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.stream.Stream;
+import io.quarkiverse.hibernate.types.it.entities.MyEntity;
+import io.quarkus.test.common.QuarkusTestResource;
+import io.quarkus.test.junit.QuarkusTest;
+import io.restassured.RestAssured;
+import io.restassured.parsing.Parser;
+import io.restassured.response.Response;
 
 @QuarkusTest
 @QuarkusTestResource(MultipleDataSourcesResource.class)
