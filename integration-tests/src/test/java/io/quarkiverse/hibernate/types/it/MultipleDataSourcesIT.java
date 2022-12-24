@@ -1,8 +1,8 @@
 package io.quarkiverse.hibernate.types.it;
 
-import io.quarkus.test.junit.NativeImageTest;
+import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@NativeImageTest
+@QuarkusIntegrationTest
 public class MultipleDataSourcesIT extends MultipleDataSourcesTest {
 
 }
