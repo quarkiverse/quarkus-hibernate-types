@@ -63,6 +63,15 @@ public class MyEntity {
 }
 ```
 
+## Limitations
+
+### Hibernate Reactive Support
+
+Using hibernate reactive is currently not (fully) supported, because the "hibernate-types" project isn't 
+meant to be used by Hibernate Reactive (see https://quarkusio.zulipchat.com/#narrow/stream/187030-users/topic/quarkus-hibernate-types ).
+
+> The "types" notion needs to map to vendor specific types that some databases expose in their proprietary JDBC driver, but Hibernate Reactive doesn't use those drivers.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
