@@ -4,46 +4,62 @@
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernatetypes/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=g:io.quarkiverse.hibernatetypes%20AND%20a:quarkus-hibernate-types-parent)
 
+## Introduction
+
+This module integrates the hibernate extension "hibernate-types" into the quarkus universe, 
+so you are able to support extra types that are not supported by the Hibernate ORM core.
+
+For detailed information, check out the readme of the underlying repository: https://github.com/vladmihalcea/hibernate-types#readme 
+
+Detailed examples (including native image generation) can be found under the "integration-tests/simple" module.
+
 ## Usage
 
-To use the extension, add the dependency to the target project:
+To use this extension, add the following dependency to your project:
 
 ```xml
 <dependency>
   <groupId>io.quarkiverse.hibernatetypes</groupId>
   <artifactId>quarkus-hibernate-types</artifactId>
-  <version>{latest-maven-release}</version>
 </dependency>
 ```
 
-## Simple usage
+Now you are able to define the newly added types in your already created entities, 
+by including the "@TypeDef" annotation on your entity class and the "@Type" annotation on the desired json field.
 
 ```java
 import io.quarkiverse.hibernate.types.json.JsonBinaryType;
-import io.quarkiverse.hibernate.types.json.JsonType;
 import io.quarkiverse.hibernate.types.json.JsonTypes;
 
+/**
+ * Declares a simple entity with a nested serialized object.
+ * This object will get inserted into a "jsonb" (postgresql) column.
+ */
 @Entity
-@TypeDef(name = JsonTypes.JSON, typeClass = JsonType.class)
 @TypeDef(name = JsonTypes.JSON_BIN, typeClass = JsonBinaryType.class)
 public class MyEntity {
 
+    /**
+     * Unique identifier / primary key for this entity.
+     */
     @Id
-    @Column(name = "ID")
     private String id;
 
+    /**
+     * Nested parameter, that will get inserted into a json column
+     */
     @Type(type = JsonTypes.JSON_BIN)
     @Column(name = "PARAM", columnDefinition = JsonTypes.JSON_BIN)
-    private MyParam param;
-}
-```
+    private MyJsonParam param;
 
-```java
-public class MyParam {
-
-  private String id;
-
-  private String name;
+    /**
+     * Parameter POJO
+     */
+    public static class MyJsonParam {
+        private String id;
+        private String name;
+    }
+    
 }
 ```
 
