@@ -23,6 +23,7 @@
   </properties>
 
   <modules>
+    <module>reactive</module>
     <module>simple</module>
   </modules>
 
