@@ -1,4 +1,4 @@
-# Quarkus Hibernate types
+# Quarkus Hibernate Types
 
 [![Build](https://github.com/quarkiverse/quarkus-hibernate-types/workflows/Build/badge.svg?branch=main)](https://github.com/quarkiverse/quarkus-hibernate-types/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
