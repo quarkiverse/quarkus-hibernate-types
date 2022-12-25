@@ -10,11 +10,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import io.quarkiverse.hibernate.types.it.entities.MyEntity;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
+import io.vertx.core.json.JsonObject;
 
 /**
  * Tests, if all entities can be loaded correctly
@@ -35,17 +35,19 @@ class QuarkusHibernateTypesTest {
     @ParameterizedTest
     @MethodSource
     protected void shouldRetrieveEntity(@NotNull String pSourceName, @NotNull String pEntityID) {
-        MyEntity entity = RestAssured.when()
+        JsonObject entity = new JsonObject(RestAssured.when()
                 .get("tests/" + pSourceName + "/" + pEntityID)
                 .andReturn()
-                .as(MyEntity.class);
+                .asString());
+
         assertNotNull(entity);
-        assertEquals(pEntityID, entity.getId());
-        assertNotNull(entity.getVarchar());
-        assertEquals(pEntityID, entity.getVarchar().getId());
-        assertEquals("test" + pEntityID, entity.getVarchar().getName());
-        assertEquals(pEntityID, entity.getJsonb().getId());
-        assertEquals("test" + pEntityID, entity.getJsonb().getName());
+        assertEquals(pEntityID, entity.getString("id"));
+        assertEquals(pEntityID, entity.getJsonObject("varchar").getString("id"));
+        assertEquals("test" + pEntityID, entity.getJsonObject("varchar").getString("name"));
+        assertEquals(pEntityID, entity.getJsonObject("jsonb").getString("id"));
+        assertEquals("test" + pEntityID, entity.getJsonObject("jsonb").getString("name"));
+        assertEquals(pEntityID, entity.getJsonObject("vertxObject").getString("id"));
+        assertEquals("test" + pEntityID, entity.getJsonObject("vertxObject").getString("name"));
     }
 
     /**
