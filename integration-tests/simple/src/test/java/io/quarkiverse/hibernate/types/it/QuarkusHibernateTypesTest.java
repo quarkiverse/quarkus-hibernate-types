@@ -48,6 +48,8 @@ class QuarkusHibernateTypesTest {
         assertEquals("test" + pEntityID, entity.getJsonObject("jsonb").getString("name"));
         assertEquals(pEntityID, entity.getJsonObject("vertxObject").getString("id"));
         assertEquals("test" + pEntityID, entity.getJsonObject("vertxObject").getString("name"));
+        assertEquals(pEntityID, entity.getJsonArray("vertxArray").getJsonObject(0).getString("id"));
+        assertEquals("test" + pEntityID, entity.getJsonArray("vertxArray").getJsonObject(0).getString("name"));
     }
 
     /**

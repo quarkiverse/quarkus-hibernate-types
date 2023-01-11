@@ -10,6 +10,7 @@ import org.hibernate.annotations.TypeDef;
 import io.quarkiverse.hibernate.types.json.JsonType;
 import io.quarkiverse.hibernate.types.json.JsonTypes;
 import io.quarkus.runtime.annotations.RegisterForReflection;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 @TypeDef(name = JsonTypes.JSON, typeClass = JsonType.class)
@@ -32,6 +33,10 @@ public class MyEntity {
     @Type(type = JsonTypes.JSON)
     @Column(name = "P_VERTX", columnDefinition = JsonTypes.JSON)
     private JsonObject vertxObject;
+
+    @Type(type = JsonTypes.JSON)
+    @Column(name = "P_VERTX_ARRAY", columnDefinition = JsonTypes.JSON)
+    private JsonArray vertxArray;
 
     public String getId() {
         return id;
@@ -63,5 +68,13 @@ public class MyEntity {
 
     public void setVertxObject(JsonObject vertxObject) {
         this.vertxObject = vertxObject;
+    }
+
+    public JsonArray getVertxArray() {
+        return vertxArray;
+    }
+
+    public void setVertxArray(JsonArray vertxArray) {
+        this.vertxArray = vertxArray;
     }
 }
