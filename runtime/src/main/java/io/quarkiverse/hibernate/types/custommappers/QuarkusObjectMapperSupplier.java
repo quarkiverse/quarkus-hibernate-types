@@ -25,6 +25,13 @@ public class QuarkusObjectMapperSupplier implements ObjectMapperSupplier {
             quarkusHibernateTypesModule.addDeserializer(jsonObjClass, new VertxJsonObjectMapper.Deserializer());
         }
 
+        //noinspection rawtypes add custom JsonArray Mapper
+        Class jsonArrClass = ReflectionUtils.getClassOrNull("io.vertx.core.json.JsonArray");
+        if (jsonArrClass != null) {
+            quarkusHibernateTypesModule.addSerializer(jsonArrClass, new VertxJsonArrayMapper.Serializer());
+            quarkusHibernateTypesModule.addDeserializer(jsonArrClass, new VertxJsonArrayMapper.Deserializer());
+        }
+
         objectMapper.registerModule(quarkusHibernateTypesModule);
         return objectMapper;
     }
