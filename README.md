@@ -77,7 +77,7 @@ meant to be used by Hibernate Reactive (see https://quarkusio.zulipchat.com/#nar
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -86,8 +86,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://www.lorislab.org"><img src="https://avatars2.githubusercontent.com/u/828045?v=4?s=100" width="100px;" alt="Andrej Petras"/><br /><sub><b>Andrej Petras</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=andrejpetras" title="Code">💻</a> <a href="#maintenance-andrejpetras" title="Maintenance">🚧</a></td>
-      <td align="center"><a href="https://conceptive.io"><img src="https://avatars.githubusercontent.com/u/14055002?v=4?s=100" width="100px;" alt="Werner Glanzer"/><br /><sub><b>Werner Glanzer</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=wglanzer" title="Code">💻</a> <a href="#maintenance-wglanzer" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.lorislab.org"><img src="https://avatars2.githubusercontent.com/u/828045?v=4?s=100" width="100px;" alt="Andrej Petras"/><br /><sub><b>Andrej Petras</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=andrejpetras" title="Code">💻</a> <a href="#maintenance-andrejpetras" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://conceptive.io"><img src="https://avatars.githubusercontent.com/u/14055002?v=4?s=100" width="100px;" alt="Werner Glanzer"/><br /><sub><b>Werner Glanzer</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=wglanzer" title="Code">💻</a> <a href="#maintenance-wglanzer" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/brunobastosg"><img src="https://avatars.githubusercontent.com/u/320122?v=4?s=100" width="100px;" alt="Bruno Guimarães"/><br /><sub><b>Bruno Guimarães</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-hibernate-types/commits?author=brunobastosg" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
