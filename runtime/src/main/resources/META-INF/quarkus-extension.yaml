@@ -1,8 +1,11 @@
 ---
 name: "Hibernate Types"
 metadata:
+  short-name: "hibernate-types"
   keywords:
   - "hibernate"
   - "types"
   categories:
     - "data"
+    - "integration"
+  status: "stable"
