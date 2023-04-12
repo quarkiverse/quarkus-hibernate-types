@@ -1,14 +1,14 @@
 package io.quarkiverse.hibernate.types.json;
 
 import java.lang.reflect.Type;
-import java.util.Properties;
-
-import org.hibernate.usertype.DynamicParameterizedType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vladmihalcea.hibernate.type.AbstractHibernateType;
-import com.vladmihalcea.hibernate.type.json.internal.*;
-import com.vladmihalcea.hibernate.type.util.*;
+
+import io.hypersistence.utils.hibernate.type.MutableDynamicParameterizedType;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonJavaTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonStringJdbcTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.util.JsonConfiguration;
+import io.hypersistence.utils.hibernate.type.util.ObjectMapperWrapper;
 
 /**
  * <p>
@@ -48,69 +48,65 @@ import com.vladmihalcea.hibernate.type.util.*;
  *
  * @author Vlad Mihalcea
  */
-public class JsonStringType extends AbstractHibernateType<Object> implements DynamicParameterizedType {
+public class JsonStringType
+        extends MutableDynamicParameterizedType<Object, JsonStringJdbcTypeDescriptor, JsonJavaTypeDescriptor> {
 
     public static final JsonStringType INSTANCE = new JsonStringType();
 
     public JsonStringType() {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(Configuration.INSTANCE.getObjectMapperWrapper()));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(JsonConfiguration.INSTANCE.getObjectMapperWrapper()));
     }
 
     public JsonStringType(Type javaType) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(Configuration.INSTANCE.getObjectMapperWrapper(), javaType));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(JsonConfiguration.INSTANCE.getObjectMapperWrapper(), javaType));
     }
 
-    public JsonStringType(Configuration configuration) {
+    public JsonStringType(JsonConfiguration configuration) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(configuration.getObjectMapperWrapper()),
-                configuration);
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(configuration.getObjectMapperWrapper()));
     }
 
     public JsonStringType(org.hibernate.type.spi.TypeBootstrapContext typeBootstrapContext) {
-        this(new Configuration(typeBootstrapContext.getConfigurationSettings()));
+        this(new JsonConfiguration(typeBootstrapContext.getConfigurationSettings()));
     }
 
     public JsonStringType(ObjectMapper objectMapper) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
     }
 
     public JsonStringType(ObjectMapperWrapper objectMapperWrapper) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(objectMapperWrapper));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(objectMapperWrapper));
     }
 
     public JsonStringType(ObjectMapper objectMapper, Type javaType) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(new ObjectMapperWrapper(objectMapper), javaType));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(new ObjectMapperWrapper(objectMapper), javaType));
     }
 
     public JsonStringType(ObjectMapperWrapper objectMapperWrapper, Type javaType) {
         super(
-                JsonStringSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(objectMapperWrapper, javaType));
+                Object.class,
+                JsonStringJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(objectMapperWrapper, javaType));
     }
 
-    @Override
     public String getName() {
         return "json";
-    }
-
-    @Override
-    protected boolean registerUnderJavaType() {
-        return true;
-    }
-
-    @Override
-    public void setParameterValues(Properties parameters) {
-        ((JsonTypeDescriptor) getJavaTypeDescriptor()).setParameterValues(parameters);
     }
 }

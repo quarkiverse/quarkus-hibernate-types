@@ -2,14 +2,14 @@ package io.quarkiverse.hibernate.types.json;
 
 import java.lang.reflect.Type;
 import java.sql.Blob;
-import java.util.Properties;
-
-import org.hibernate.usertype.DynamicParameterizedType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vladmihalcea.hibernate.type.AbstractHibernateType;
-import com.vladmihalcea.hibernate.type.json.internal.*;
-import com.vladmihalcea.hibernate.type.util.*;
+
+import io.hypersistence.utils.hibernate.type.MutableDynamicParameterizedType;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonBlobJdbcTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonJavaTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.util.JsonConfiguration;
+import io.hypersistence.utils.hibernate.type.util.ObjectMapperWrapper;
 
 /**
  * <p>
@@ -32,64 +32,64 @@ import com.vladmihalcea.hibernate.type.util.*;
  *
  * @author Vlad Mihalcea
  */
-public class JsonBlobType extends AbstractHibernateType<Object> implements DynamicParameterizedType {
+public class JsonBlobType extends MutableDynamicParameterizedType<Object, JsonBlobJdbcTypeDescriptor, JsonJavaTypeDescriptor> {
 
     public static final JsonBlobType INSTANCE = new JsonBlobType();
 
     public JsonBlobType() {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(Configuration.INSTANCE.getObjectMapperWrapper()));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(JsonConfiguration.INSTANCE.getObjectMapperWrapper()));
     }
 
     public JsonBlobType(Type javaType) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(Configuration.INSTANCE.getObjectMapperWrapper(), javaType));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(JsonConfiguration.INSTANCE.getObjectMapperWrapper(), javaType));
     }
 
-    public JsonBlobType(Configuration configuration) {
+    public JsonBlobType(JsonConfiguration configuration) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(configuration.getObjectMapperWrapper()),
-                configuration);
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(configuration.getObjectMapperWrapper()));
     }
 
     public JsonBlobType(org.hibernate.type.spi.TypeBootstrapContext typeBootstrapContext) {
-        this(new Configuration(typeBootstrapContext.getConfigurationSettings()));
+        this(new JsonConfiguration(typeBootstrapContext.getConfigurationSettings()));
     }
 
     public JsonBlobType(ObjectMapper objectMapper) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
     }
 
     public JsonBlobType(ObjectMapperWrapper objectMapperWrapper) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(objectMapperWrapper));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(objectMapperWrapper));
     }
 
     public JsonBlobType(ObjectMapper objectMapper, Type javaType) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(new ObjectMapperWrapper(objectMapper), javaType));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(new ObjectMapperWrapper(objectMapper), javaType));
     }
 
     public JsonBlobType(ObjectMapperWrapper objectMapperWrapper, Type javaType) {
         super(
-                JsonBlobSqlTypeDescriptor.INSTANCE,
-                new JsonTypeDescriptor(objectMapperWrapper, javaType));
+                Object.class,
+                JsonBlobJdbcTypeDescriptor.INSTANCE,
+                new JsonJavaTypeDescriptor(objectMapperWrapper, javaType));
     }
 
     public String getName() {
         return "jsonb-lob";
     }
-
-    @Override
-    public void setParameterValues(Properties parameters) {
-        ((JsonTypeDescriptor) getJavaTypeDescriptor()).setParameterValues(parameters);
-    }
-
 }
