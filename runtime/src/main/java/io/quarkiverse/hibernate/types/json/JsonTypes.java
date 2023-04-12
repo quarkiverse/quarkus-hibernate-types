@@ -2,7 +2,7 @@ package io.quarkiverse.hibernate.types.json;
 
 import java.sql.Blob;
 
-import javax.persistence.Column;
+import jakarta.persistence.Column;
 
 import com.fasterxml.jackson.databind.JsonNode;
 

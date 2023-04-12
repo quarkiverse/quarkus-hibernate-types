@@ -3,7 +3,7 @@ package io.quarkiverse.hibernate.types.json;
 import java.lang.reflect.Type;
 import java.util.Properties;
 
-import javax.persistence.Column;
+import jakarta.persistence.Column;
 
 import org.hibernate.type.descriptor.sql.SqlTypeDescriptor;
 import org.hibernate.usertype.*;
