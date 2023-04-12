@@ -2,8 +2,9 @@ package io.quarkiverse.hibernate.types.custommappers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.vladmihalcea.hibernate.type.util.ObjectMapperSupplier;
-import com.vladmihalcea.hibernate.util.ReflectionUtils;
+
+import io.hypersistence.utils.hibernate.type.util.ObjectMapperSupplier;
+import io.hypersistence.utils.hibernate.util.ReflectionUtils;
 
 /**
  * Custom implementation of the ObjectMapperSupplier to provide custom serializers/deserializers

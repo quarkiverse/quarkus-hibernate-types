@@ -16,7 +16,7 @@
 This module integrates the hibernate extension "hibernate-types" into the quarkus universe, 
 so you are able to support extra types that are not supported by the Hibernate ORM core.
 
-For detailed information, check out the readme of the underlying repository: https://github.com/vladmihalcea/hibernate-types#readme 
+For detailed information, check out the readme of the underlying repository: https://github.com/vladmihalcea/hypersistence-utils#readme
 
 Detailed examples (including native image generation) can be found under the "integration-tests/simple" module.
 

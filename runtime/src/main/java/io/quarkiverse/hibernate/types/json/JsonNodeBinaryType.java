@@ -1,9 +1,13 @@
 package io.quarkiverse.hibernate.types.json;
 
-import com.fasterxml.jackson.databind.*;
-import com.vladmihalcea.hibernate.type.AbstractHibernateType;
-import com.vladmihalcea.hibernate.type.json.internal.*;
-import com.vladmihalcea.hibernate.type.util.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.hypersistence.utils.hibernate.type.MutableDynamicParameterizedType;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonBinaryJdbcTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.json.internal.JsonNodeJavaTypeDescriptor;
+import io.hypersistence.utils.hibernate.type.util.JsonConfiguration;
+import io.hypersistence.utils.hibernate.type.util.ObjectMapperWrapper;
 
 /**
  * <p>
@@ -27,37 +31,41 @@ import com.vladmihalcea.hibernate.type.util.*;
  *
  * @author Vlad Mihalcea
  */
-public class JsonNodeBinaryType extends AbstractHibernateType<JsonNode> {
+public class JsonNodeBinaryType
+        extends MutableDynamicParameterizedType<JsonNode, JsonBinaryJdbcTypeDescriptor, JsonNodeJavaTypeDescriptor> {
 
     public static final JsonNodeBinaryType INSTANCE = new JsonNodeBinaryType();
 
     public JsonNodeBinaryType() {
         super(
-                JsonBinarySqlTypeDescriptor.INSTANCE,
-                new JsonNodeTypeDescriptor(Configuration.INSTANCE.getObjectMapperWrapper()));
+                JsonNode.class,
+                JsonBinaryJdbcTypeDescriptor.INSTANCE,
+                new JsonNodeJavaTypeDescriptor(JsonConfiguration.INSTANCE.getObjectMapperWrapper()));
     }
 
-    public JsonNodeBinaryType(Configuration configuration) {
+    public JsonNodeBinaryType(JsonConfiguration configuration) {
         super(
-                JsonBinarySqlTypeDescriptor.INSTANCE,
-                new JsonNodeTypeDescriptor(configuration.getObjectMapperWrapper()),
-                configuration);
+                JsonNode.class,
+                JsonBinaryJdbcTypeDescriptor.INSTANCE,
+                new JsonNodeJavaTypeDescriptor(configuration.getObjectMapperWrapper()));
     }
 
     public JsonNodeBinaryType(org.hibernate.type.spi.TypeBootstrapContext typeBootstrapContext) {
-        this(new Configuration(typeBootstrapContext.getConfigurationSettings()));
+        this(new JsonConfiguration(typeBootstrapContext.getConfigurationSettings()));
     }
 
     public JsonNodeBinaryType(ObjectMapper objectMapper) {
         super(
-                JsonBinarySqlTypeDescriptor.INSTANCE,
-                new JsonNodeTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
+                JsonNode.class,
+                JsonBinaryJdbcTypeDescriptor.INSTANCE,
+                new JsonNodeJavaTypeDescriptor(new ObjectMapperWrapper(objectMapper)));
     }
 
     public JsonNodeBinaryType(ObjectMapperWrapper objectMapperWrapper) {
         super(
-                JsonBinarySqlTypeDescriptor.INSTANCE,
-                new JsonNodeTypeDescriptor(objectMapperWrapper));
+                JsonNode.class,
+                JsonBinaryJdbcTypeDescriptor.INSTANCE,
+                new JsonNodeJavaTypeDescriptor(objectMapperWrapper));
     }
 
     public String getName() {

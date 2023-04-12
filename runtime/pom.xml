@@ -27,9 +27,9 @@
 
     <!-- Hibernate Types -->
     <dependency>
-      <groupId>com.vladmihalcea</groupId>
-      <artifactId>hibernate-types-55</artifactId>
-      <version>2.21.0</version>
+      <groupId>io.hypersistence</groupId>
+      <artifactId>hypersistence-utils-hibernate-62</artifactId>
+      <version>3.3.1</version>
     </dependency>
 
     <!-- Custom VertX Object Mapper -->

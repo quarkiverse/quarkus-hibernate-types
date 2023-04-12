@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 
 import io.quarkiverse.hibernate.types.json.JsonType;
 import io.quarkiverse.hibernate.types.json.JsonTypes;
@@ -13,7 +12,6 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
-@TypeDef(name = JsonTypes.JSON, typeClass = JsonType.class)
 @Entity
 @RegisterForReflection
 public class MyEntity {
@@ -22,19 +20,19 @@ public class MyEntity {
     @Column(name = "ID")
     private String id;
 
-    @Type(type = JsonTypes.JSON)
+    @Type(JsonType.class)
     @Column(name = "P_STRING", columnDefinition = "varchar(255)")
     private MyParam varchar;
 
-    @Type(type = JsonTypes.JSON)
+    @Type(JsonType.class)
     @Column(name = "P_JSONB", columnDefinition = JsonTypes.JSON)
     private MyParam jsonb;
 
-    @Type(type = JsonTypes.JSON)
+    @Type(JsonType.class)
     @Column(name = "P_VERTX", columnDefinition = JsonTypes.JSON)
     private JsonObject vertxObject;
 
-    @Type(type = JsonTypes.JSON)
+    @Type(JsonType.class)
     @Column(name = "P_VERTX_ARRAY", columnDefinition = JsonTypes.JSON)
     private JsonArray vertxArray;
 
