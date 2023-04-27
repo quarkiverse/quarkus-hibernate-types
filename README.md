@@ -4,6 +4,13 @@
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-hibernate-types.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Central](https://img.shields.io/maven-central/v/io.quarkiverse.hibernatetypes/quarkus-hibernate-types-parent?color=green)](https://search.maven.org/search?q=g:io.quarkiverse.hibernatetypes%20AND%20a:quarkus-hibernate-types-parent)
 
+> **Warning**
+>
+> Quarkus 3.0 integrated Hibernate 6.2, so this extension is no longer needed for JSON type support.
+>
+> We provide an updated version of this extension anyway, so it is more convenient to upgrade quarkus.
+> It currently looks like that we will not implement any new features in this extension anymore, because hibernate 6.2 should bring you all of the features out of the box.
+
 ## Introduction
 
 This module integrates the hibernate extension "hibernate-types" into the quarkus universe, 
