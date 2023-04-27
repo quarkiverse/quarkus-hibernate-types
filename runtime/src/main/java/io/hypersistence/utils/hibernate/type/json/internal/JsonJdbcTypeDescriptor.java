@@ -10,9 +10,11 @@ import org.hibernate.engine.jdbc.dialect.internal.StandardDialectResolver;
 import org.hibernate.engine.jdbc.dialect.spi.DatabaseMetaDataDialectResolutionInfoAdapter;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.hibernate.type.descriptor.ValueBinder;
+import org.hibernate.type.descriptor.ValueExtractor;
 import org.hibernate.type.descriptor.WrapperOptions;
 import org.hibernate.type.descriptor.java.JavaType;
 import org.hibernate.type.descriptor.jdbc.BasicBinder;
+import org.hibernate.type.descriptor.jdbc.BasicExtractor;
 import org.hibernate.usertype.DynamicParameterizedType;
 import org.hibernate.usertype.ParameterizedType;
 
@@ -56,17 +58,17 @@ public class JsonJdbcTypeDescriptor extends AbstractJsonJdbcTypeDescriptor imple
 
     @Override
     protected Object extractJson(ResultSet rs, int paramIndex) throws SQLException {
-        return sqlTypeDescriptor(rs.getStatement().getConnection(), null).extractJson(rs, paramIndex); //todo null?
+        return sqlTypeDescriptor(rs.getStatement().getConnection(), null).extractJson(rs, paramIndex);
     }
 
     @Override
     protected Object extractJson(CallableStatement statement, int index) throws SQLException {
-        return sqlTypeDescriptor(statement.getConnection(), null).extractJson(statement, index); //todo null?
+        return sqlTypeDescriptor(statement.getConnection(), null).extractJson(statement, index);
     }
 
     @Override
     protected Object extractJson(CallableStatement statement, String name) throws SQLException {
-        return sqlTypeDescriptor(statement.getConnection(), null).extractJson(statement, name); //todo null?
+        return sqlTypeDescriptor(statement.getConnection(), null).extractJson(statement, name);
     }
 
     private AbstractJsonJdbcTypeDescriptor sqlTypeDescriptor(Connection connection, WrapperOptions options) {
@@ -112,6 +114,32 @@ public class JsonJdbcTypeDescriptor extends AbstractJsonJdbcTypeDescriptor imple
         } catch (SQLException e) {
             throw new IllegalStateException(e);
         }
+    }
+
+    @Override
+    public <X> ValueExtractor<X> getExtractor(final JavaType<X> javaType) {
+        return new BasicExtractor<X>(javaType, this) {
+            @Override
+            protected X doExtract(ResultSet rs, int paramIndex, WrapperOptions options) throws SQLException {
+                // overriden, because we need to access the options
+                Object json = sqlTypeDescriptor(rs.getStatement().getConnection(), options).extractJson(rs, paramIndex);
+                return javaType.wrap(json, options);
+            }
+
+            @Override
+            protected X doExtract(CallableStatement statement, int index, WrapperOptions options) throws SQLException {
+                // overriden, because we need to access the options
+                Object json = sqlTypeDescriptor(statement.getConnection(), options).extractJson(statement, index);
+                return javaType.wrap(json, options);
+            }
+
+            @Override
+            protected X doExtract(CallableStatement statement, String name, WrapperOptions options) throws SQLException {
+                // overriden, because we need to access the options
+                Object json = sqlTypeDescriptor(statement.getConnection(), options).extractJson(statement, name);
+                return javaType.wrap(json, options);
+            }
+        };
     }
 
     private Dialect _resolveDialect(DatabaseMetaDataDialectResolutionInfoAdapter metaDataInfo, WrapperOptions options)
