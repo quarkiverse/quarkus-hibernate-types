@@ -19,7 +19,7 @@ import org.hibernate.usertype.DynamicParameterizedType;
 import org.hibernate.usertype.ParameterizedType;
 
 import io.hypersistence.utils.hibernate.type.util.ParameterTypeUtils;
-import io.hypersistence.utils.hibernate.util.StringUtils;
+import io.hypersistence.utils.common.StringUtils;
 
 /**
  * @author Vlad Mihalcea
