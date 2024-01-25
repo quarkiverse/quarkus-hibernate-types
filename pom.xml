@@ -28,6 +28,7 @@
   </scm>
   <modules>
     <module>deployment</module>
+    <module>docs</module>
     <module>runtime</module>
     <module>integration-tests</module>
   </modules>
