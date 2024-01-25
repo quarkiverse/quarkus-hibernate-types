@@ -1,7 +1,8 @@
 package io.hypersistence.utils.hibernate.type.json.internal;
 
-import io.hypersistence.utils.common.StringUtils;
-import io.hypersistence.utils.hibernate.type.util.ParameterTypeUtils;
+import java.sql.*;
+import java.util.Properties;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.dialect.*;
@@ -17,8 +18,8 @@ import org.hibernate.type.descriptor.jdbc.BasicExtractor;
 import org.hibernate.usertype.DynamicParameterizedType;
 import org.hibernate.usertype.ParameterizedType;
 
-import java.sql.*;
-import java.util.Properties;
+import io.hypersistence.utils.common.StringUtils;
+import io.hypersistence.utils.hibernate.type.util.ParameterTypeUtils;
 
 /**
  * @author Vlad Mihalcea
