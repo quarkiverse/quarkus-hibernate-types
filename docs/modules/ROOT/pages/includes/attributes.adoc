@@ -1,5 +1,5 @@
 :quarkus-version: 3.10.0
-:quarkus-hibernate-types-version: 2.1.0
+:quarkus-hibernate-types-version: 2.2.0
 :maven-version: 3.8.1+
 
 :quarkus-org-url: https://github.com/quarkusio
