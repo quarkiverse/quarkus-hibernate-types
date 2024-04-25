@@ -28,8 +28,8 @@
     <!-- Hibernate Types -->
     <dependency>
       <groupId>io.hypersistence</groupId>
-      <artifactId>hypersistence-utils-hibernate-62</artifactId>
-      <version>3.7.3</version>
+      <artifactId>hypersistence-utils-hibernate-63</artifactId>
+      <version>3.7.4</version>
     </dependency>
 
     <!-- Custom VertX Object Mapper -->
